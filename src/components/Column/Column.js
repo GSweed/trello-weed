@@ -11,7 +11,7 @@ function Column() {
               <li>Add what you'd like to word on below</li>
               <li>Add what you'd like to word on below</li>
               <li>Add what you'd like to word on below</li>
-              <li>Add what you'd like to word on below</li>
+              <li>Add what you'd like to word on belo</li>
               
             </ul>
             <footer>Add another card</footer>
