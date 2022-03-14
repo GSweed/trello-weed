@@ -3,20 +3,19 @@ $list-bg-color:#ebecf0;
 $column-header-height: 46px;
 $column-footer-height: 46px;
 $column-boder-radius: 5px;
+$column-height: calc(#{$board_content_height} - #{$gap * 2});
 
 .column{
     flex: 0 0 auto;
     width: 300px;
-    height: calc( 100% - #{$gap} );
-    &:not(:first-child){
+    height: $column-height;
         margin-left: $gap;
-    }
     > * {
         background-color: $list-bg-color;
         color: #333;
         padding: 0 8px;
     }
-    header{
+    header.column-drag-handle{
         padding-left: 15px;
         height: $column-header-height;
         line-height: $column-header-height;
@@ -24,6 +23,7 @@ $column-boder-radius: 5px;
         font-weight: bold;
         border-top-left-radius: $column-boder-radius;
         border-top-right-radius: $column-boder-radius;
+        cursor: pointer;
     }
 
     footer{
@@ -33,10 +33,9 @@ $column-boder-radius: 5px;
         border-bottom-left-radius: $column-boder-radius;
         border-bottom-right-radius: $column-boder-radius;
     }
-    ul.Card-list{
-        list-style-type: none;
+    .Card-list{
         margin: 0;
-        max-height: calc(100% - #{$column-header-height} - #{$column-footer-height});
+        max-height: calc(#{$column-height} - #{$column-header-height} - #{$column-footer-height});
         overflow-y: auto;
         &::-webkit-scrollbar{
             -webkit-appearance: none;
@@ -49,6 +48,20 @@ $column-boder-radius: 5px;
             border-right: 5px solid $list-bg-color;
         }
 
+        .card-ghost {
+            transition: transform 0.18s ease;
+            transform: rotateZ(5deg)
+          }
+          
+          .card-ghost-drop{
+            transition: transform 0.18s ease-in-out;
+            transform: rotateZ(0deg)
+          }
+          .card-drop-preview {
+            background-color: rgba(150, 150, 200, 0.1);
+            border: 1px dashed #abc;
+            margin: 5px;
+          }
         
     }
 }
