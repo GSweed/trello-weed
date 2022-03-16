@@ -4,9 +4,16 @@
 
 .board-content{
     height: $board_content_height;
-    // display: flex;
+    display: flex;
     overflow-x: auto;
     overflow-y: hidden;
+    &:after {
+        content: '';
+        flex: 0 0 $gap;
+    }
+    // &:last-child{
+    //     margin-right: $gap;
+    // }
     // margin: 0 $gap $gap;
     &::-webkit-scrollbar{
         -webkit-appearance: none;
@@ -25,7 +32,7 @@
       }
     .add-new-column{
         width: 250px;
-        height: 32px;
+        max-width: 250px;
         line-height: 32px;
         padding: 4px 0 4px 15px;
         cursor: pointer;
@@ -37,6 +44,30 @@
         border-radius: $column-boder-radius;
         &:hover{
             background-color: hsla(0, 0%, 100%, .34);
+        }
+    }
+    .enter-new-column{
+        width: 250px;
+        max-width: 250px;
+        background-color: $column-bg-color;
+        line-height: 32px;
+        padding: 4px 10px;
+        margin-left: $gap;
+        border-radius: $column-boder-radius;
+
+        input.input-enter-new-column{
+            margin: 5px 0;
+        }
+    }
+    span.cancel-new-column{
+        margin-left: $gap;
+        i{
+            font-size: 18px;
+            cursor: pointer;
+            color: $alert-danger;
+            &:hover{
+                color: darken($alert-danger, 10);
+            }
         }
     }
 }
