@@ -38,4 +38,19 @@ body{
     [contenteditable].form-control:focus {
     box-shadow: inset 0 -1px 0 #ddd;
     }
+    .btn:focus, .btn:active{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    .weed-content-edit{
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+        font-size: inherit;
+        font-weight: inherit;
+        &:focus{
+            background-color: white;
+            border: 1px solid $input_border_color;
+        }
+    }
 }
