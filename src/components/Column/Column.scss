@@ -99,16 +99,21 @@ $column-height: calc(#{$board_content_height} - #{$gap * 2});
             font-weight: bold;
           }
           
-          .card-ghost-drop{
+        .card-ghost-drop{
             transition: transform 0.18s ease-in-out;
             font-weight: bold;
             transform: rotateZ(0deg);
           }
-          .card-drop-preview {
+        .card-drop-preview {
             background-color: rgba(150, 150, 200, 0.1);
             border: 1px dashed #abc;
             margin: 5px;
           }
-        
+        .add-new-card-area{
+            .textarea-enter-new-card{
+                min-height: 54px;
+                max-height: 162px;
+            }
+        }
     }
 }
